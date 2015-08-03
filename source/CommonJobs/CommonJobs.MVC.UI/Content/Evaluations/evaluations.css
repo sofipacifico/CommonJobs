@@ -91,18 +91,18 @@
  * Clear floats.
  */
 /* line 140, ../../sass/Evaluations/_mixins.scss */
-.clearfix, .evaluation .top-evaluation, .evaluation .footer-evaluation {
+.clearfix, .evaluation .top-evaluation, .evaluation .footer {
   zoom: 1;
 }
 /* line 142, ../../sass/Evaluations/_mixins.scss */
-.clearfix:before, .evaluation .top-evaluation:before, .evaluation .footer-evaluation:before, .clearfix:after, .evaluation .top-evaluation:after, .evaluation .footer-evaluation:after {
+.clearfix:before, .evaluation .top-evaluation:before, .evaluation .footer:before, .clearfix:after, .evaluation .top-evaluation:after, .evaluation .footer:after {
   content: "\0020";
   display: block;
   height: 0;
   overflow: hidden;
 }
 /* line 148, ../../sass/Evaluations/_mixins.scss */
-.clearfix:after, .evaluation .top-evaluation:after, .evaluation .footer-evaluation:after {
+.clearfix:after, .evaluation .top-evaluation:after, .evaluation .footer:after {
   clear: both;
 }
 
@@ -286,87 +286,127 @@ h1 {
 
 /* line 86, ../../sass/Evaluations/_base.scss */
 .content-evaluation {
+  position: relative;
+  max-width: 1300px;
   min-width: 1024px;
   width: 100%;
-  padding: 90px 50px 0;
+  margin: 0 auto;
+  padding: 90px 10px 0 10px;
 }
-/* line 91, ../../sass/Evaluations/_base.scss */
+/* line 94, ../../sass/Evaluations/_base.scss */
 .content-evaluation li {
   list-style: none;
   padding-left: 20px;
 }
-/* line 96, ../../sass/Evaluations/_base.scss */
+/* line 99, ../../sass/Evaluations/_base.scss */
 .content-evaluation .table {
   border-spacing: 0;
   width: 100%;
   margin-bottom: 20px;
   font-size: 14px;
 }
-/* line 103, ../../sass/Evaluations/_base.scss */
-.content-evaluation .title-evaluations {
-  background-color: #FFFFFF;
-  color: #444;
+/* line 106, ../../sass/Evaluations/_base.scss */
+.content-evaluation .header {
+  display: inline-block;
   width: 100%;
+  color: #444;
   margin: 0;
-  height: 60px;
-  line-height: 60px;
+  font-size: 20px;
   border-bottom: 1px solid #ccc;
-  font-weight: 100;
 }
 /* line 114, ../../sass/Evaluations/_base.scss */
+.content-evaluation .header h2 {
+  font-size: 26px;
+}
+/* line 116, ../../sass/Evaluations/_base.scss */
+.content-evaluation .header h2.header--left {
+  float: left;
+}
+/* line 120, ../../sass/Evaluations/_base.scss */
+.content-evaluation .header h2.header--right {
+  float: right;
+}
+/* line 129, ../../sass/Evaluations/_base.scss */
+.content-evaluation thead th.selected .icon.arrow {
+  background-image: url(../Images/Evaluations/3.png);
+}
+/* line 133, ../../sass/Evaluations/_base.scss */
 .content-evaluation tr:nth-child(odd) {
   background-color: #FFFFFF;
 }
-/* line 118, ../../sass/Evaluations/_base.scss */
+/* line 137, ../../sass/Evaluations/_base.scss */
 .content-evaluation tr:nth-child(even) {
   background-color: #F2F4F5;
 }
-/* line 122, ../../sass/Evaluations/_base.scss */
+/* line 141, ../../sass/Evaluations/_base.scss */
 .content-evaluation tr {
   height: 45px;
 }
-/* line 126, ../../sass/Evaluations/_base.scss */
+/* line 145, ../../sass/Evaluations/_base.scss */
 .content-evaluation th, .content-evaluation td {
   text-align: left;
   color: #777;
   padding: 0 10px !important;
   vertical-align: middle !important;
 }
-/* line 133, ../../sass/Evaluations/_base.scss */
+/* line 152, ../../sass/Evaluations/_base.scss */
 .content-evaluation th {
   background-color: #FFFFFF;
   padding: 10px;
   border-top: 1px solid #CCC;
   border-bottom: 1px solid #CCC;
 }
-/* line 139, ../../sass/Evaluations/_base.scss */
+/* line 158, ../../sass/Evaluations/_base.scss */
 .content-evaluation th.selected {
   color: #000000;
 }
-/* line 144, ../../sass/Evaluations/_base.scss */
+/* line 163, ../../sass/Evaluations/_base.scss */
 .content-evaluation .selected {
   color: #000000;
 }
-/* line 148, ../../sass/Evaluations/_base.scss */
-.content-evaluation .button-evaluations {
+/* line 167, ../../sass/Evaluations/_base.scss */
+.content-evaluation .button-evaluation {
   padding: 15px;
   color: white;
   border-radius: 5px;
   border: none;
   background-color: #4499F4;
-  float: right;
   cursor: pointer;
+  -moz-transition: all 0.15s ease;
+  -o-transition: all 0.15s ease;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
 }
-/* line 157, ../../sass/Evaluations/_base.scss */
-.content-evaluation .button-evaluations:disabled {
+/* line 176, ../../sass/Evaluations/_base.scss */
+.content-evaluation .button-evaluation.button-evaluation--xbig {
+  font-size: 20px;
+  padding: 23px 34px;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+/* line 182, ../../sass/Evaluations/_base.scss */
+.content-evaluation .button-evaluation.button-evaluation--xsmall {
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  height: 34px;
+  line-height: 12px;
+  width: 90px;
+}
+/* line 190, ../../sass/Evaluations/_base.scss */
+.content-evaluation .button-evaluation:disabled {
   background-color: #ccc;
 }
-/* line 162, ../../sass/Evaluations/_base.scss */
+/* line 193, ../../sass/Evaluations/_base.scss */
+.content-evaluation .button-evaluation:hover {
+  background-color: #3B85D3;
+}
+/* line 198, ../../sass/Evaluations/_base.scss */
 .content-evaluation input {
   width: 100%;
 }
 
-/* line 167, ../../sass/Evaluations/_base.scss */
+/* line 203, ../../sass/Evaluations/_base.scss */
 .icon {
   padding-left: 20px;
   padding-right: 5px;
@@ -374,33 +414,33 @@ h1 {
   background-repeat: no-repeat;
   background-position: center;
 }
-/* line 174, ../../sass/Evaluations/_base.scss */
+/* line 210, ../../sass/Evaluations/_base.scss */
 .icon.arrow {
   background-image: url(../Images/Evaluations/2.png);
   margin-left: -10px;
 }
-/* line 178, ../../sass/Evaluations/_base.scss */
+/* line 214, ../../sass/Evaluations/_base.scss */
 .icon.arrow.selected {
   background-image: url(../Images/Evaluations/3.png);
   margin-left: -10px;
 }
-/* line 182, ../../sass/Evaluations/_base.scss */
+/* line 218, ../../sass/Evaluations/_base.scss */
 .icon.add {
   background-image: url(../Images/Evaluations/1-02.png);
 }
-/* line 186, ../../sass/Evaluations/_base.scss */
+/* line 222, ../../sass/Evaluations/_base.scss */
 .icon.edit {
   background-image: url(../Images/Evaluations/6-02.png);
 }
-/* line 190, ../../sass/Evaluations/_base.scss */
+/* line 226, ../../sass/Evaluations/_base.scss */
 .icon.user {
   background-image: url(../Images/Evaluations/3-02.png);
 }
-/* line 194, ../../sass/Evaluations/_base.scss */
+/* line 230, ../../sass/Evaluations/_base.scss */
 .icon.empresa {
   background-image: url(../Images/Evaluations/7-02.png);
 }
-/* line 198, ../../sass/Evaluations/_base.scss */
+/* line 234, ../../sass/Evaluations/_base.scss */
 .icon.view {
   background-image: url(../Images/Evaluations/4-02.png);
 }
@@ -462,106 +502,72 @@ h1 {
 }
 
 /* line 3, ../../sass/Evaluations/_generate-evaluation.scss */
-thead th.selected .icon.arrow {
-  background-image: url(../Images/Evaluations/3.png);
-}
-
-/* line 7, ../../sass/Evaluations/_generate-evaluation.scss */
-tr.evaluation-generated td {
+.generate-evaluation tr.evaluation-generated td {
   color: #b2b2b2;
+}
+/* line 7, ../../sass/Evaluations/_generate-evaluation.scss */
+.generate-evaluation .footer {
+  float: right;
 }
 
 /* line 9, ../../sass/Evaluations/_dashboard.scss */
-.dashboard.recursos-humanos .header {
-  display: inline-block;
-  border-bottom: 1px solid #ccc;
-  width: 100%;
-}
-/* line 14, ../../sass/Evaluations/_dashboard.scss */
-.dashboard.recursos-humanos .header h2 {
-  color: #444;
-  margin: 0;
-  height: 60px;
-  line-height: 60px;
-  font-size: 26px;
-  float: left;
-}
-/* line 22, ../../sass/Evaluations/_dashboard.scss */
-.dashboard.recursos-humanos .header h2.header--human-resources {
-  float: right;
-}
-/* line 28, ../../sass/Evaluations/_dashboard.scss */
-.dashboard.recursos-humanos table td:first-child {
-  text-align: center;
-}
-/* line 37, ../../sass/Evaluations/_dashboard.scss */
 .dashboard table td {
   position: relative;
 }
-/* line 42, ../../sass/Evaluations/_dashboard.scss */
+/* line 14, ../../sass/Evaluations/_dashboard.scss */
 .dashboard table th.col-1 {
   width: 60px;
 }
-/* line 45, ../../sass/Evaluations/_dashboard.scss */
+/* line 17, ../../sass/Evaluations/_dashboard.scss */
 .dashboard table th.col-2, .dashboard table th.col-3, .dashboard table th.col-4 {
   width: auto;
 }
-/* line 50, ../../sass/Evaluations/_dashboard.scss */
+/* line 22, ../../sass/Evaluations/_dashboard.scss */
 .dashboard table th.col-5 {
   width: 150px;
 }
-/* line 53, ../../sass/Evaluations/_dashboard.scss */
+/* line 25, ../../sass/Evaluations/_dashboard.scss */
 .dashboard table th.col-6 {
   width: 220px;
 }
-/* line 56, ../../sass/Evaluations/_dashboard.scss */
+/* line 28, ../../sass/Evaluations/_dashboard.scss */
 .dashboard table th.col-7 {
   width: 150px;
 }
-/* line 59, ../../sass/Evaluations/_dashboard.scss */
+/* line 31, ../../sass/Evaluations/_dashboard.scss */
 .dashboard table th.col-8 {
   width: 110px;
 }
-/* line 62, ../../sass/Evaluations/_dashboard.scss */
+/* line 34, ../../sass/Evaluations/_dashboard.scss */
 .dashboard table th.selected .icon.arrow {
   background-image: url(../Images/Evaluations/3.png);
 }
-/* line 67, ../../sass/Evaluations/_dashboard.scss */
+/* line 39, ../../sass/Evaluations/_dashboard.scss */
 .dashboard .rol {
   padding-left: 17px;
 }
-/* line 71, ../../sass/Evaluations/_dashboard.scss */
+/* line 43, ../../sass/Evaluations/_dashboard.scss */
 .dashboard a {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
   padding-left: 3px;
 }
-/* line 77, ../../sass/Evaluations/_dashboard.scss */
+/* line 49, ../../sass/Evaluations/_dashboard.scss */
 .dashboard a .calification-links.disable {
   color: #777;
 }
-/* line 81, ../../sass/Evaluations/_dashboard.scss */
+/* line 53, ../../sass/Evaluations/_dashboard.scss */
 .dashboard a .link-responsable {
   padding: 10px;
   text-decoration: underline;
 }
-/* line 88, ../../sass/Evaluations/_dashboard.scss */
-.dashboard .button-evaluations.feedback-start {
-  float: none;
-  padding: 0;
-  font-size: 12px;
-  height: 34px;
-  line-height: 12px;
-  width: 90px;
-  margin: 0;
-}
-/* line 99, ../../sass/Evaluations/_dashboard.scss */
+/* line 59, ../../sass/Evaluations/_dashboard.scss */
 .dashboard .state-doc {
   display: inline-block;
   padding-left: 15px;
 }
-/* line 103, ../../sass/Evaluations/_dashboard.scss */
+/* line 63, ../../sass/Evaluations/_dashboard.scss */
 .dashboard .state-doc:before {
   /* For a round bullet */
   content: '\2022';
@@ -573,23 +579,23 @@ tr.evaluation-generated td {
   font-size: 34px;
   line-height: 20px;
 }
-/* line 116, ../../sass/Evaluations/_dashboard.scss */
+/* line 76, ../../sass/Evaluations/_dashboard.scss */
 .dashboard .state-doc.state-0:before, .dashboard .state-doc.state-5:before {
   color: #6DC32E;
 }
-/* line 122, ../../sass/Evaluations/_dashboard.scss */
+/* line 82, ../../sass/Evaluations/_dashboard.scss */
 .dashboard .state-doc.state-1:before {
   color: #E94830;
 }
-/* line 128, ../../sass/Evaluations/_dashboard.scss */
+/* line 88, ../../sass/Evaluations/_dashboard.scss */
 .dashboard .state-doc.state-2:before, .dashboard .state-doc.state-3:before {
   color: #F7EC4D;
 }
-/* line 134, ../../sass/Evaluations/_dashboard.scss */
+/* line 94, ../../sass/Evaluations/_dashboard.scss */
 .dashboard .state-doc.state-4:before {
   color: #419BF7;
 }
-/* line 140, ../../sass/Evaluations/_dashboard.scss */
+/* line 100, ../../sass/Evaluations/_dashboard.scss */
 .dashboard .state-doc.state-6:before {
   color: #888;
 }
@@ -709,26 +715,28 @@ tr.evaluation-generated td {
   text-align: center;
 }
 
-/* line 5, ../../sass/Evaluations/_evaluation.scss */
-.evaluation .title-evaluations {
+/* line 6, ../../sass/Evaluations/_evaluation.scss */
+.evaluation .title {
   margin: 20px 0;
   font-size: 26px;
+  font-weight: 100;
+  border-bottom: 1px solid #ccc;
 }
-/* line 9, ../../sass/Evaluations/_evaluation.scss */
-.evaluation .title-evaluations strong {
+/* line 12, ../../sass/Evaluations/_evaluation.scss */
+.evaluation .title strong {
   color: #444;
 }
-/* line 14, ../../sass/Evaluations/_evaluation.scss */
+/* line 17, ../../sass/Evaluations/_evaluation.scss */
 .evaluation th, .evaluation td {
   border: none;
   text-align: center;
 }
-/* line 19, ../../sass/Evaluations/_evaluation.scss */
+/* line 22, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .top-evaluation {
   position: relative;
   margin: 20px 0;
 }
-/* line 24, ../../sass/Evaluations/_evaluation.scss */
+/* line 27, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .top-evaluation h4 {
   border-bottom: 1px solid #ccc;
   margin-top: 0;
@@ -736,19 +744,19 @@ tr.evaluation-generated td {
   width: 300px;
   padding-bottom: 10px;
 }
-/* line 32, ../../sass/Evaluations/_evaluation.scss */
+/* line 35, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .top-evaluation .top-left {
   width: 60%;
   float: left;
   padding: 10px;
 }
-/* line 37, ../../sass/Evaluations/_evaluation.scss */
+/* line 40, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .top-evaluation .top-left .personal-info-container {
   margin: 0 0 30px 0;
   padding: 0;
   list-style: none;
 }
-/* line 42, ../../sass/Evaluations/_evaluation.scss */
+/* line 45, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .top-evaluation .top-left .personal-info-container li {
   margin: 0;
   padding: 0;
@@ -760,22 +768,22 @@ tr.evaluation-generated td {
   width: -webkit-calc(100% / 2);
   width: calc(100% / 2);
 }
-/* line 51, ../../sass/Evaluations/_evaluation.scss */
+/* line 54, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .top-evaluation .top-left .personal-info-container li:nth-child(odd) {
   float: left;
 }
-/* line 54, ../../sass/Evaluations/_evaluation.scss */
+/* line 57, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .top-evaluation .top-left .personal-info-container li:nth-child(odd) .item {
   width: 85px;
 }
-/* line 59, ../../sass/Evaluations/_evaluation.scss */
+/* line 62, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .top-evaluation .top-left .personal-info-container li .item {
   width: 120px;
   display: inline-block;
   float: left;
   color: #878787;
 }
-/* line 66, ../../sass/Evaluations/_evaluation.scss */
+/* line 69, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .top-evaluation .top-left .personal-info-container li .item-info {
   color: #444;
   white-space: nowrap;
@@ -787,14 +795,14 @@ tr.evaluation-generated td {
   width: -webkit-calc(100% - 120px);
   width: calc(100% - 120px);
 }
-/* line 76, ../../sass/Evaluations/_evaluation.scss */
+/* line 79, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .top-evaluation .top-left .personal-info-container li .editable-projects {
   width: 245px;
   height: 30px;
   float: left;
   margin: -5px 0 0 -5px;
 }
-/* line 82, ../../sass/Evaluations/_evaluation.scss */
+/* line 85, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .top-evaluation .top-left .personal-info-container li .editable-projects input {
   box-shadow: none;
   border: solid 1px #FFF;
@@ -835,7 +843,7 @@ tr.evaluation-generated td {
   font-style: italic;
   color: #999;
 }
-/* line 98, ../../sass/Evaluations/_evaluation.scss */
+/* line 101, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .top-evaluation .top-left .personal-info-container li .editable-projects .pencil {
   background: #DDD url(../Images/Evaluations/12-01.png) no-repeat center center;
   border: none;
@@ -846,41 +854,41 @@ tr.evaluation-generated td {
   float: right;
   display: none;
 }
-/* line 114, ../../sass/Evaluations/_evaluation.scss */
+/* line 117, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .top-evaluation .top-left .personal-info-container li .editable-projects.edition-enabled input, .evaluation .top-evaluation .top-left .personal-info-container li .editable-projects:hover input {
   border: solid 1px #DDD;
   border-radius: 3px;
 }
-/* line 120, ../../sass/Evaluations/_evaluation.scss */
+/* line 123, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .top-evaluation .top-left .personal-info-container li .editable-projects.edition-enabled.edition input, .evaluation .top-evaluation .top-left .personal-info-container li .editable-projects.edition:hover input {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-/* line 125, ../../sass/Evaluations/_evaluation.scss */
+/* line 128, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .top-evaluation .top-left .personal-info-container li .editable-projects.edition-enabled.edition .pencil, .evaluation .top-evaluation .top-left .personal-info-container li .editable-projects.edition:hover .pencil {
   display: block;
 }
-/* line 134, ../../sass/Evaluations/_evaluation.scss */
+/* line 137, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .top-evaluation .top-left .metrics-container {
   font-size: 18px;
   color: #444;
   line-height: 30px;
 }
-/* line 139, ../../sass/Evaluations/_evaluation.scss */
+/* line 142, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .top-evaluation .top-left .metrics-container span {
   font-size: 20px;
 }
-/* line 144, ../../sass/Evaluations/_evaluation.scss */
+/* line 147, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .top-evaluation .top-left .explanatory-text {
   margin-top: 30px;
 }
-/* line 149, ../../sass/Evaluations/_evaluation.scss */
+/* line 152, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .top-evaluation .top-right {
   width: 40%;
   float: right;
   padding: 10px;
 }
-/* line 155, ../../sass/Evaluations/_evaluation.scss */
+/* line 158, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .top-evaluation .comments-container {
   border: solid 1px #DDD;
   border-radius: 5px;
@@ -893,18 +901,18 @@ tr.evaluation-generated td {
   color: #444;
   font-size: 14px;
 }
-/* line 167, ../../sass/Evaluations/_evaluation.scss */
+/* line 170, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .top-evaluation .comments-container.comments-company-container {
   height: 140px;
 }
-/* line 171, ../../sass/Evaluations/_evaluation.scss */
-.evaluation .top-evaluation .comments-container .title {
+/* line 174, ../../sass/Evaluations/_evaluation.scss */
+.evaluation .top-evaluation .comments-container .comments-title {
   color: #000;
   font-size: 16px;
   font-weight: bold;
   text-decoration: underline;
 }
-/* line 178, ../../sass/Evaluations/_evaluation.scss */
+/* line 181, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .top-evaluation .comments-container .content-editable {
   border: none;
   box-shadow: none;
@@ -912,136 +920,136 @@ tr.evaluation-generated td {
   min-height: 50px;
   width: 100%;
 }
-/* line 185, ../../sass/Evaluations/_evaluation.scss */
+/* line 188, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .top-evaluation .comments-container .content-editable.big-comment {
   height: -moz-calc(100% - 2px);
   height: -webkit-calc(100% - 2px);
   height: calc(100% - 2px);
   margin-bottom: 0;
 }
-/* line 190, ../../sass/Evaluations/_evaluation.scss */
+/* line 193, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .top-evaluation .comments-container .content-editable:disabled {
   background: transparent !important;
   cursor: default;
 }
-/* line 198, ../../sass/Evaluations/_evaluation.scss */
+/* line 201, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .explanatory-text {
   font-size: 14px;
   color: #878787;
   font-style: italic;
 }
-/* line 207, ../../sass/Evaluations/_evaluation.scss */
+/* line 210, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items th, .evaluation .calification-items td {
   font-weight: normal;
   width: 100px;
   max-width: 100px;
   text-align: center;
 }
-/* line 214, ../../sass/Evaluations/_evaluation.scss */
+/* line 217, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items th:first-child,
 .evaluation .calification-items td:first-child {
   text-align: left;
   padding-left: 40px !important;
 }
-/* line 222, ../../sass/Evaluations/_evaluation.scss */
+/* line 225, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items.table-2-columns th:first-child,
 .evaluation .calification-items.table-2-columns td:first-child {
   width: -moz-calc(100% - (1 * 100px));
   width: -webkit-calc(100% - (1 * 100px));
   width: calc(100% - (1 * 100px));
 }
-/* line 222, ../../sass/Evaluations/_evaluation.scss */
+/* line 225, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items.table-3-columns th:first-child,
 .evaluation .calification-items.table-3-columns td:first-child {
   width: -moz-calc(100% - (2 * 100px));
   width: -webkit-calc(100% - (2 * 100px));
   width: calc(100% - (2 * 100px));
 }
-/* line 222, ../../sass/Evaluations/_evaluation.scss */
+/* line 225, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items.table-4-columns th:first-child,
 .evaluation .calification-items.table-4-columns td:first-child {
   width: -moz-calc(100% - (3 * 100px));
   width: -webkit-calc(100% - (3 * 100px));
   width: calc(100% - (3 * 100px));
 }
-/* line 222, ../../sass/Evaluations/_evaluation.scss */
+/* line 225, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items.table-5-columns th:first-child,
 .evaluation .calification-items.table-5-columns td:first-child {
   width: -moz-calc(100% - (4 * 100px));
   width: -webkit-calc(100% - (4 * 100px));
   width: calc(100% - (4 * 100px));
 }
-/* line 222, ../../sass/Evaluations/_evaluation.scss */
+/* line 225, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items.table-6-columns th:first-child,
 .evaluation .calification-items.table-6-columns td:first-child {
   width: -moz-calc(100% - (5 * 100px));
   width: -webkit-calc(100% - (5 * 100px));
   width: calc(100% - (5 * 100px));
 }
-/* line 222, ../../sass/Evaluations/_evaluation.scss */
+/* line 225, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items.table-7-columns th:first-child,
 .evaluation .calification-items.table-7-columns td:first-child {
   width: -moz-calc(100% - (6 * 100px));
   width: -webkit-calc(100% - (6 * 100px));
   width: calc(100% - (6 * 100px));
 }
-/* line 222, ../../sass/Evaluations/_evaluation.scss */
+/* line 225, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items.table-8-columns th:first-child,
 .evaluation .calification-items.table-8-columns td:first-child {
   width: -moz-calc(100% - (7 * 100px));
   width: -webkit-calc(100% - (7 * 100px));
   width: calc(100% - (7 * 100px));
 }
-/* line 222, ../../sass/Evaluations/_evaluation.scss */
+/* line 225, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items.table-9-columns th:first-child,
 .evaluation .calification-items.table-9-columns td:first-child {
   width: -moz-calc(100% - (8 * 100px));
   width: -webkit-calc(100% - (8 * 100px));
   width: calc(100% - (8 * 100px));
 }
-/* line 222, ../../sass/Evaluations/_evaluation.scss */
+/* line 225, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items.table-10-columns th:first-child,
 .evaluation .calification-items.table-10-columns td:first-child {
   width: -moz-calc(100% - (9 * 100px));
   width: -webkit-calc(100% - (9 * 100px));
   width: calc(100% - (9 * 100px));
 }
-/* line 222, ../../sass/Evaluations/_evaluation.scss */
+/* line 225, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items.table-11-columns th:first-child,
 .evaluation .calification-items.table-11-columns td:first-child {
   width: -moz-calc(100% - (10 * 100px));
   width: -webkit-calc(100% - (10 * 100px));
   width: calc(100% - (10 * 100px));
 }
-/* line 222, ../../sass/Evaluations/_evaluation.scss */
+/* line 225, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items.table-12-columns th:first-child,
 .evaluation .calification-items.table-12-columns td:first-child {
   width: -moz-calc(100% - (11 * 100px));
   width: -webkit-calc(100% - (11 * 100px));
   width: calc(100% - (11 * 100px));
 }
-/* line 222, ../../sass/Evaluations/_evaluation.scss */
+/* line 225, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items.table-13-columns th:first-child,
 .evaluation .calification-items.table-13-columns td:first-child {
   width: -moz-calc(100% - (12 * 100px));
   width: -webkit-calc(100% - (12 * 100px));
   width: calc(100% - (12 * 100px));
 }
-/* line 222, ../../sass/Evaluations/_evaluation.scss */
+/* line 225, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items.table-14-columns th:first-child,
 .evaluation .calification-items.table-14-columns td:first-child {
   width: -moz-calc(100% - (13 * 100px));
   width: -webkit-calc(100% - (13 * 100px));
   width: calc(100% - (13 * 100px));
 }
-/* line 222, ../../sass/Evaluations/_evaluation.scss */
+/* line 225, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items.table-15-columns th:first-child,
 .evaluation .calification-items.table-15-columns td:first-child {
   width: -moz-calc(100% - (14 * 100px));
   width: -webkit-calc(100% - (14 * 100px));
   width: calc(100% - (14 * 100px));
 }
-/* line 229, ../../sass/Evaluations/_evaluation.scss */
+/* line 232, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items .calificators {
   position: relative;
   border-top: none;
@@ -1052,18 +1060,18 @@ tr.evaluation-generated td {
   height: 70px;
   vertical-align: middle;
 }
-/* line 239, ../../sass/Evaluations/_evaluation.scss */
+/* line 242, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items .calificators:last-child {
   border-right: none;
 }
-/* line 243, ../../sass/Evaluations/_evaluation.scss */
+/* line 246, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items .calificators h1 {
   font-size: 34px;
   padding: 0;
   font-weight: normal;
   text-transform: uppercase;
 }
-/* line 249, ../../sass/Evaluations/_evaluation.scss */
+/* line 252, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items .calificators .icon {
   background-image: url(../Images/Evaluations/11-02.png);
   position: absolute;
@@ -1073,27 +1081,27 @@ tr.evaluation-generated td {
   top: 5px;
   cursor: pointer;
 }
-/* line 258, ../../sass/Evaluations/_evaluation.scss */
+/* line 261, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items .calificators .icon.top-tip:hover:after {
   left: -20px;
 }
-/* line 261, ../../sass/Evaluations/_evaluation.scss */
+/* line 264, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items .calificators .icon.top-tip:hover:before {
   left: 5px;
 }
-/* line 265, ../../sass/Evaluations/_evaluation.scss */
+/* line 268, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items .calificators .icon:after {
   content: 'Ocultar';
 }
-/* line 269, ../../sass/Evaluations/_evaluation.scss */
+/* line 272, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items .calificators .icon.hide-column {
   background-image: url(../Images/Evaluations/10-02.png);
 }
-/* line 272, ../../sass/Evaluations/_evaluation.scss */
+/* line 275, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items .calificators .icon.hide-column:after {
   content: "Mostrar";
 }
-/* line 279, ../../sass/Evaluations/_evaluation.scss */
+/* line 282, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items .title-evaluation {
   background-color: #888888;
   color: white;
@@ -1103,11 +1111,11 @@ tr.evaluation-generated td {
   text-transform: uppercase;
   border-top: none;
 }
-/* line 288, ../../sass/Evaluations/_evaluation.scss */
+/* line 291, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items .title-evaluation:last-child {
   border-right: none;
 }
-/* line 294, ../../sass/Evaluations/_evaluation.scss */
+/* line 297, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items tbody .sub-title-evaluation {
   background-color: #656565;
   color: white !important;
@@ -1116,57 +1124,57 @@ tr.evaluation-generated td {
   text-transform: uppercase;
   border-top: none;
 }
-/* line 302, ../../sass/Evaluations/_evaluation.scss */
+/* line 305, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items tbody .sub-title-evaluation:first-child {
   font-size: 26px;
 }
-/* line 307, ../../sass/Evaluations/_evaluation.scss */
+/* line 310, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items tbody .icon.info {
   background: url(../Images/Evaluations/information.png) no-repeat center center;
   height: 16px;
   width: 16px;
   margin-left: 5px;
 }
-/* line 315, ../../sass/Evaluations/_evaluation.scss */
+/* line 318, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items tbody tr {
   height: 50px;
   background-color: #FFF;
   color: #666;
 }
-/* line 320, ../../sass/Evaluations/_evaluation.scss */
+/* line 323, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items tbody tr.row-selected {
   background-color: #EDF0F1;
 }
-/* line 323, ../../sass/Evaluations/_evaluation.scss */
+/* line 326, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items tbody tr.row-selected td span {
   color: #000;
 }
-/* line 327, ../../sass/Evaluations/_evaluation.scss */
+/* line 330, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items tbody tr.row-selected .icon.info {
   background: url(../Images/Evaluations/information-black.png) no-repeat center center;
   height: 16px;
   width: 16px;
   margin-left: 5px;
 }
-/* line 334, ../../sass/Evaluations/_evaluation.scss */
+/* line 337, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items tbody tr.row-selected .calification-input {
   border: 1px solid #439CFD;
 }
-/* line 339, ../../sass/Evaluations/_evaluation.scss */
+/* line 342, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items tbody tr td {
   font-size: 20px;
   border-bottom: 1px solid #DDD;
   border-right: 1px solid #DDD;
 }
-/* line 344, ../../sass/Evaluations/_evaluation.scss */
+/* line 347, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items tbody tr td:first-child {
   font-size: 16px;
 }
-/* line 348, ../../sass/Evaluations/_evaluation.scss */
+/* line 351, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items tbody tr td:last-child {
   border-right: none;
 }
-/* line 353, ../../sass/Evaluations/_evaluation.scss */
+/* line 356, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items tbody tr .calification-input {
   border: solid 1px #BBB;
   width: 50px;
@@ -1176,36 +1184,28 @@ tr.evaluation-generated td {
   padding: 0 5px;
   text-align: center;
 }
-/* line 362, ../../sass/Evaluations/_evaluation.scss */
+/* line 365, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items tbody tr .calification-input.invalid {
   border-color: #EE6048 !important;
 }
-/* line 367, ../../sass/Evaluations/_evaluation.scss */
+/* line 370, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items tbody tr .exceeds-expectations {
   background: #CEE9AC;
 }
-/* line 371, ../../sass/Evaluations/_evaluation.scss */
+/* line 374, ../../sass/Evaluations/_evaluation.scss */
 .evaluation .calification-items tbody tr .poor {
   background: #FDF7C5;
 }
-/* line 378, ../../sass/Evaluations/_evaluation.scss */
-.evaluation .footer-evaluation {
-  margin: 35px 0;
-}
-/* line 382, ../../sass/Evaluations/_evaluation.scss */
-.evaluation .footer-evaluation .finish-btn {
-  border-radius: 8px;
-  width: 315px;
-  height: 70px;
+/* line 381, ../../sass/Evaluations/_evaluation.scss */
+.evaluation .footer {
   float: right;
-  margin-left: 25px;
-  font-size: 20px;
 }
-/* line 391, ../../sass/Evaluations/_evaluation.scss */
-.evaluation .footer-evaluation .explanatory-text {
-  float: right;
+/* line 385, ../../sass/Evaluations/_evaluation.scss */
+.evaluation .footer p {
   font-size: 16px;
   margin-top: 25px;
+  padding-right: 25px;
+  display: inline-block;
 }
 
 /*Loader*/

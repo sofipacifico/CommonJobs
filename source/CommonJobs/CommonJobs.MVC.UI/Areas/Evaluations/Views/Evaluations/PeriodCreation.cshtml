@@ -17,7 +17,9 @@
 }
 
 <div class="content-evaluation generate-evaluation">
-    <h2 class="title">Generar Evaluaciones</h2>
+    <div class="header">
+        <h2 class="header--left">Generar Evaluacion</h2>
+    </div>
     <table class="table">
         <thead>
             <tr data-bind="foreach: headers">
@@ -39,7 +41,9 @@
             </tr>
         </tbody>
     </table>
-    <button type="submit" id="generate-evaluation-button" class="primary-btn button-evaluations" data-bind="enable: generateButtonEnable">Generar Evaluaciones</button>
+    <div class="footer">
+        <button type="submit" id="generate-evaluation-button" class="button-evaluation button-evaluation--xbig" data-bind="enable: generateButtonEnable">Generar Evaluaciones</button>
+    </div>
     <script type="text/javascript">
         var evaluationPeriod = "@ViewBag.Period";
     </script>

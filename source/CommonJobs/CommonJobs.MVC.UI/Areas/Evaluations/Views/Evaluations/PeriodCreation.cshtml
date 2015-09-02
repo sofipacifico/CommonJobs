@@ -16,7 +16,7 @@
     ScriptManager.RegisterJs(Url.Content("~/Scripts/Evaluations/admin.js"));
 }
 
-<div class="content-evaluation generate-evaluation">
+<!-- div class="content-evaluation generate-evaluation">
     <h2 class="title">Generar Evaluaciones</h2>
     <table class="table">
         <thead>
@@ -40,10 +40,104 @@
         </tbody>
     </table>
     <button type="submit" id="generate-evaluation-button" class="primary-btn button-evaluations" data-bind="enable: generateButtonEnable">Generar Evaluaciones</button>
-    <script type="text/javascript">
-        var evaluationPeriod = "@ViewBag.Period";
-    </script>
-</div>
+    
+</!--div>
+
+<div class="modal content-pop-up clearfix">
+    <div class="modal-header">
+        <h3 class="modal-title"></h3>
+    </div>
+    <p class="modal-text"></p>
+    <div class="model-footer">
+        <button class="back">VOLVER</button>
+        <button class="confirm">OK</button>
+    </div>
+</div-->
+
+<main class="content__main">
+    <aside class="sidebar__main">
+        <form action="">
+            <div class="sidebar__block">
+                <h3>Iniciar Búsqueda</h3>
+                <div class="input-holder">
+                    <label for=""></label>
+                    <input type="text" placeholder="Buscar..." id="search">
+                    <button class="btn--icon icon-remove"></button>
+                </div>
+            </div>
+            <div class="sidebar__block">
+                <h4>Departamento</h4>
+                <div class="input-holder">
+                    <label for=""><input type="checkbox"> <span>Administración</span></label>
+                </div>
+                <div class="input-holder">
+                    <label for=""><input type="checkbox"> <span>Desarrollo</span></label>
+                </div>
+                <div class="input-holder">
+                    <label for=""><input type="checkbox"> <span>Diseño UX</span></label>
+                </div>
+                <div class="input-holder">
+                    <label for=""><input type="checkbox"> <span>Recursos Humanos</span></label>
+                </div>
+                <div class="input-holder">
+                    <label for=""><input type="checkbox"> <span>Mobile</span></label>
+                </div>
+            </div>
+            <div class="sidebar__block">
+                <h4>Posición</h4>
+                <div class="input-holder">
+                    <label for=""><input type="checkbox"> <span>Technical Lead</span></label>
+                </div>
+                <div class="input-holder">
+                    <label for=""><input type="checkbox"> <span>Senior</span></label>
+                </div>
+                <div class="input-holder">
+                    <label for=""><input type="checkbox"> <span>Semi Senior Advanced</span></label>
+                </div>
+                <div class="input-holder">
+                    <label for=""><input type="checkbox"> <span>Semi Senior</span></label>
+                </div>
+                <div class="input-holder">
+                    <label for=""><input type="checkbox"> <span>Junior Advanced</span></label>
+                </div>
+                <div class="input-holder">
+                    <label for=""><input type="checkbox"> <span>Junior</span></label>
+                </div>
+                <div class="input-holder">
+                    <label for=""><input type="checkbox"> <span>Trainee</span></label>
+                </div>
+            </div>
+        </form>
+    </aside>
+
+    <section class="section__main">
+        <h1>Generación de Evaluaciones</h1>
+        <table class="table filter--is-active-1">
+            <thead>
+                <tr data-bind="foreach: headers">
+                    <th data-bind="click: $parent.sort,  css: { selected: activeSort}">
+                        <span data-bind="text: title"></span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: items">
+                <tr data-bind="css: { 'evaluation-generated': period }">
+                    <td class="fullName" data-bind="text: fullName"></td>
+                    <td data-bind="text: currentPosition"></td>
+                    <td data-bind="text: seniority"></td>
+                    <td>
+                        <span data-bind="visible: period, text:responsible"></span>
+                        <input class="evaluation-owner-field" data-bind="visible: !period, value: responsible, css: { invalid: !isValid()}" autocomplete="off" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<script type="text/javascript">
+    var evaluationPeriod = "@ViewBag.Period";
+</script>
 
 <div class="modal content-pop-up clearfix">
     <div class="modal-header">

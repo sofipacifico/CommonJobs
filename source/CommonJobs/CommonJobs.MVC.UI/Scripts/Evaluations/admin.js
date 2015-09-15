@@ -84,14 +84,6 @@
     }
     var viewmodel = new PeriodCreation();
 
-    $("#search").on("keyup", function() {
-        var g = $(this).val().toLowerCase();
-        $("section.section__main table tbody tr td.fullName").each(function() {
-            var s = $(this).text().toLowerCase();
-            $(this).closest('section.section__main')[s.indexOf(g) !== -1 ? 'show' : 'hide']();
-        });
-    })
-
     $('#generate-evaluation-button').on('click', function () {
         if (viewmodel.isValid()) {
             postEvaluationsForGeneration({
